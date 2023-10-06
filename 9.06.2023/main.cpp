@@ -14,7 +14,7 @@ int myStrlen(char* array)
 	}
 	return tmp;
 }
-
+2
 void helloMorld(char*& string_one, char*& string_two)
 {
 	int size = (myStrlen(string_one) + myStrlen(string_two)) + 1;
@@ -41,25 +41,25 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	cout << "Какой файл нужно найти? " << endl;
+	cout << "ГЉГ ГЄГ®Г© ГґГ Г©Г« Г­ГіГ¦Г­Г® Г­Г Г©ГІГЁ? " << endl;
 	char put[256]{};
-	cout << "Путь " << endl;
+	cout << "ГЏГіГІГј " << endl;
 	cin >> put;
 	char rashir[256]{};
-	cout << "Расширение " << endl;
+	cout << "ГђГ Г±ГёГЁГ°ГҐГ­ГЁГҐ " << endl;
 	cin >> rashir;
 	char* tmp_one = put;
 	char* tmp_two = rashir;
 
 	helloMorld(tmp_one, tmp_two);
 
-	strcat_s(tmp_one, 256, tmp_two); // тоже конкатенация
+	strcat_s(tmp_one, 256, tmp_two); // ГІГ®Г¦ГҐ ГЄГ®Г­ГЄГ ГІГҐГ­Г Г¶ГЁГї
 
-	_finddata_t fileinfo{}; // структура из С++
-	intptr_t ptr = _findfirst(tmp_one, &fileinfo); // поиск файлов
+	_finddata_t fileinfo{}; // Г±ГІГ°ГіГЄГІГіГ°Г  ГЁГ§ Г‘++
+	intptr_t ptr = _findfirst(tmp_one, &fileinfo); // ГЇГ®ГЁГ±ГЄ ГґГ Г©Г«Г®Гў
 	cout << fileinfo.name << endl;
 
-	while (_findnext(ptr, &fileinfo) != -1) //вывод всех следующих файлов
+	while (_findnext(ptr, &fileinfo) != -1) //ГўГ»ГўГ®Г¤ ГўГ±ГҐГµ Г±Г«ГҐГ¤ГіГѕГ№ГЁГµ ГґГ Г©Г«Г®Гў
 	{
 		cout << fileinfo.name << endl;
 	}
